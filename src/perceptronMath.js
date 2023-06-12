@@ -6,9 +6,13 @@ function sigmoid(x) {
     return 1/denominator;
 }
 
+function derivativeSigmoid(x) {
+    return sigmoid(x)*(1-sigmoid(x));
+}
+
 function returnValueOfPerceptron(sumOfWeightedValues, bias) {
     let sum = parseFloat(sumOfWeightedValues)+parseFloat(bias);
     return sigmoid(sum);
 }
 
-export {returnValueOfPerceptron, sigmoid}
+export {returnValueOfPerceptron, sigmoid,  derivativeSigmoid}
