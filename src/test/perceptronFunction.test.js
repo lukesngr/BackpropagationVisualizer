@@ -1,4 +1,4 @@
-import returnValueOfPerceptron from '../returnValueOfPerceptron';
+import {returnValueOfPerceptron} from '../returnValueOfPerceptron';
 
 let weightOne = 1;
 let xOne = 0.25;

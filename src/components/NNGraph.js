@@ -1,4 +1,4 @@
-import returnValueOfPerceptron from "../returnValueOfPerceptron";
+import {returnValueOfPerceptron} from "../returnValueOfPerceptron";
 import Perceptron from "./Perceptron"
 
 function NNGraph(props) {
