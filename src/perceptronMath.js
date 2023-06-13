@@ -15,7 +15,7 @@ function costFunction(a, y) {
 }
 
 function derivativeCostFunction(a, y) {
-    return 2(a-y);
+    return 2*(a-y);
 }
 
 function returnValueOfPerceptron(sumOfWeightedValues, bias) {
