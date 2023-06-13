@@ -6,8 +6,16 @@ function sigmoid(x) {
     return 1/denominator;
 }
 
-function derivativeSigmoid(x) {
-    return sigmoid(x)*(1-sigmoid(x));
+function derivativeSigmoid(z) {
+    return sigmoid(z)*(1-sigmoid(z));
+}
+
+function costFunction(a, y) {
+    return Math.pow((a-y), 2);
+}
+
+function derivativeCostFunction(a, y) {
+    return 2(a-y);
 }
 
 function returnValueOfPerceptron(sumOfWeightedValues, bias) {
@@ -15,4 +23,8 @@ function returnValueOfPerceptron(sumOfWeightedValues, bias) {
     return sigmoid(sum);
 }
 
-export {returnValueOfPerceptron, sigmoid,  derivativeSigmoid}
+function derivativeOfCostOverWeight(x, a, z, y) {
+    return x*derivativeSigmoid(z)*derivativeCostFunction(a, y);
+}
+
+export {returnValueOfPerceptron, sigmoid,  derivativeSigmoid, costFunction, derivativeOfCostOverWeight}

@@ -1,5 +1,6 @@
 import {returnValueOfPerceptron} from "../perceptronMath";
 import Perceptron from "./Perceptron"
+import DerivativeMath from './DerivativeMath';
 
 function NNGraph(props) {
 
@@ -9,6 +10,7 @@ function NNGraph(props) {
     var outputResult = returnValueOfPerceptron(hiddenResult*props.w2, props.b2).toFixed(2);
     const paddingToZero = {paddingLeft: 0, paddingRight: 0};
     return (
+        <>
         <div className="container">
             <div className="row">
                 <div className="col-md-2" style={{paddingRight: 0}}>
@@ -38,6 +40,8 @@ function NNGraph(props) {
                 <div className="col-md-2"></div>
             </div>
         </div>
+        <DerivativeMath a={outputResult} y={props.y} z={hiddenResult*props.w2} x={hiddenResult}></DerivativeMath>
+        </>
     )
 }
 
