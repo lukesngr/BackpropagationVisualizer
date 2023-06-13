@@ -1,4 +1,4 @@
-import {returnValueOfPerceptron} from "../returnValueOfPerceptron";
+import {returnValueOfPerceptron} from "../perceptronMath";
 import Perceptron from "./Perceptron"
 
 function NNGraph(props) {
@@ -7,6 +7,7 @@ function NNGraph(props) {
     var hiddenResult = returnValueOfPerceptron(props.x*props.w1, props.b1);
     var outputParameter = (props.w2*hiddenResult).toFixed(2)+"+"+props.b2;
     var outputResult = returnValueOfPerceptron(hiddenResult*props.w2, props.b2).toFixed(2);
+    const paddingToZero = {paddingLeft: 0, paddingRight: 0};
     return (
         <div className="container">
             <div className="row">
@@ -14,23 +15,23 @@ function NNGraph(props) {
                     <h1>Input Layer</h1>
                     <Perceptron margin={5} input={props.x}></Perceptron>
                 </div>
-                <div className="col-md-2" style={{paddingLeft: 0, paddingRight: 0}}>
+                <div className="col-md-2" style={paddingToZero}>
                     <div style={{marginTop: "40%"}} className="text-left">
                         <p>w1*x = {props.w1}*{props.x}</p>
                         <hr></hr>
                     </div> 
                 </div>
-                <div className="col-md-2" style={{paddingLeft: 0, paddingRight: 0}}>
+                <div className="col-md-2" style={paddingToZero}>
                     <h1>Hidden Layer</h1>
                     <Perceptron input={"S("+hiddenParameter+") ="+hiddenResult.toFixed(2)} />
                 </div>
-                <div className="col-md-2"  style={{paddingLeft: 0, paddingRight: 0}}>
+                <div className="col-md-2"  style={paddingToZero}>
                     <div style={{marginTop: "40%"}} className="text-left">
                         <p>w2*input = {props.w2}*{hiddenResult.toFixed(2)}</p>
                         <hr></hr>
                     </div> 
                 </div>
-                <div className="col-md-2"  style={{paddingLeft: 0, paddingRight: 0}}>
+                <div className="col-md-2"  style={paddingToZero}>
                     <h1>Output Layer</h1>
                     <Perceptron input={"S("+outputParameter+") ="+outputResult} />
                 </div>
